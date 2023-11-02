@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:superheroes/pages/main_page.dart';
 
 void main() {
@@ -12,6 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MainPage(),
+      theme: _buildTheme(Brightness.light),
+    );
+  }
+
+  ThemeData _buildTheme(brightness) {
+    var baseTheme = ThemeData(brightness: brightness);
+
+    return baseTheme.copyWith(
+      textTheme: GoogleFonts.openSansTextTheme(baseTheme.textTheme),
     );
   }
 }
